@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-22 16:23+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:215
+msgid "Please enter your name"
+msgstr "আপনার নাম লেখেন"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:216
+msgid "Please enter a valid email address"
+msgstr "আপনার ইমেইল লেখেন"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:217
+msgid "Please enter your phone"
+msgstr "আপনার ফোন নাম্বার লেখেন"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:218
+msgid "Please leave your massage"
+msgstr "আপনার তথ্য লেখেন"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:219
+msgid "Please select your country"
+msgstr "আপনার দেশ সেলেক্ট করুন"
+
+#: matherhatmadrasha/static/design_related/assets/js/main.js:220
+msgid "Please choose your subject"
+msgstr "আপনার বিষয় পছন্দ করুন"

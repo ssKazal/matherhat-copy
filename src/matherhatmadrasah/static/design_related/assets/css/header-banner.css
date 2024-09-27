@@ -1,0 +1,248 @@
+.top-bar p {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    background: var(--theme-clr);
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    background: rgba(226, 249, 255, 0.95);
+    position: relative;
+    z-index: 990;
+}
+
+.logo img {
+    width: 198px;
+    min-height: 93px;
+    height: 93px;
+}
+
+.nav_bar ul {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.nav_bar ul a {
+    color: var(--theme-clr);
+    display: grid;
+    place-items: center;
+    margin-left: 60px;
+    height: 113px;
+}
+
+.nav_bar ul a:hover {
+    color: #2F8921;
+}
+
+.banner {
+    position: relative;
+    top: -113px;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.banner img {
+    width: 100%;
+    min-height: 100%;
+}
+
+.banner-heading {
+    width: 45%;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.banner-heading h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 36px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    line-height: 60px;
+}
+
+@media screen and (max-width:1400px){
+    .nav_bar ul{
+        font-size: 20px;
+    }
+
+    .nav_bar ul a{
+        margin-left: 40px;
+        height: 100px;
+    }
+
+    .banner-heading{
+        width: 60%;
+        bottom: 15%;
+    }
+
+    .banner-heading h1{
+        font-size: 32px;
+        line-height: 52px;
+    }
+}
+
+@media screen and (max-width:1285px) {
+    .banner{
+        position: relative;
+        height: 80vh;
+    }
+
+    .banner::before{
+        z-index: 1;
+    }
+
+    .banner img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:1152px){
+    .logo img {
+        width: 140px;
+        min-height: auto;
+        height: auto;
+    }
+
+    .nav_bar ul a{
+        height: 85px;
+    }
+}
+
+@media screen and (max-width:991px){
+    .banner{
+        height: 100vh;
+    }
+
+    .banner::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: none;
+        background-color: rgba(0, 0, 0, 0.6);
+        left: 0;
+        z-index: 1;
+    }
+
+    .nav_bar ul{
+        position: absolute;
+        right: 0;
+        background: rgb(255 255 255 / 97%);;
+        top: 0;
+        height: 200vh;
+        width: 100%;
+        display: none;
+        padding-top: 65px;
+    }
+
+    .nav_bar ul a{
+        margin: 0;
+        height: auto;
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .menu-bi-list{
+        font-size: 32px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        height: 80px;
+        color: var(--theme-clr);
+    }
+
+    .menu-bi-x {
+        position: absolute;
+        top: 11px;
+        right: 28px;
+        font-size: 38px;
+        cursor: pointer;
+        color: var(--theme-clr);
+    }
+
+    .banner-heading h1{
+        font-size: 26px;
+        line-height: 46px;
+    }
+    
+    .top-bar p{
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .banner-heading {
+        width: 80%;
+        bottom: auto;
+        top: 50%;
+    }
+
+    #header-banner{
+        overflow: hidden;
+        height: 106vh;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .banner-heading {
+        width: 98%; 
+        bottom: auto;
+        top: 60%;
+        transform: translate(-50% , -50%);
+    }
+
+    .banner-heading h1 {
+        font-size: 22px;
+        line-height: 42px;
+    }
+}
+
+@media screen and (max-width:356px){
+    header{
+        padding: 0;
+    }
+
+    .menu-bi-list{
+        margin: 0 10px;
+    }
+
+    .menu-bi-x{
+        right: 7px;
+    }
+}

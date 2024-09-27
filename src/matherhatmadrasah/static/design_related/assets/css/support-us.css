@@ -1,0 +1,143 @@
+.support-us-modal-dialog {
+  max-width: 60% !important;
+}
+
+.support-us-modal-dialog .modal-content {
+  padding: 50px 120px;
+}
+
+.support-us-modal-dialog .section-title {
+  font-size: 30px;
+}
+
+.support-us-input-field {
+  margin-bottom: 20px;
+}
+
+.support-us-input-field label,
+.support-us-textarea-field label {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--dark-text);
+}
+
+.support-us-input-field input,
+.support-us-input-field select,
+.support-us-textarea-field textarea {
+  border: 2px solid #5d6d7e;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  color: var(--dark-text);
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.support-us-textarea-field textarea {
+  height: 160px;
+  margin-bottom: 30px;
+}
+
+.support-us-btn {
+  border: 3px solid transparent;
+  font-size: 20px;
+  padding: 10px 30px;
+  background-color: var(--theme-clr);
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.support-us-btn[data-bs-dismiss] {
+  background-color: #fff;
+  color: var(--theme-clr);
+  border-color: var(--theme-clr);
+}
+
+@media screen and (max-width: 1420px) {
+  .support-us-modal-dialog .modal-content {
+    padding: 50px;
+  }
+
+  .support-us-modal-dialog {
+    max-width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .support-us-modal-dialog {
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .support-us-modal-dialog {
+    max-width: 90% !important;
+  }
+
+  .modal-dialog.support-us-modal-dialog {
+    transform: translate(0, -50px) !important;
+  }
+
+  .support-us-modal-dialog .section-title {
+    font-size: 26px;
+  }
+
+  .support-us-input-field label,
+  .support-us-textarea-field label {
+    font-size: 16px;
+  }
+
+  .support-us-input-field input,
+  .support-us-input-field select,
+  .support-us-textarea-field textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .support-us-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .support-us-modal-dialog .modal-content {
+    padding: 50px 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .modal-dialog.support-us-modal-dialog {
+    transform: translate(0, -70px) !important;
+  }
+
+  .support-us-modal-dialog {
+    max-width: 98% !important;
+  }
+
+  .support-us-modal-dialog .modal-content {
+    padding: 20px;
+  }
+}
+
+form .error {
+  color: red;
+}
+
+.spinner-border-sm {
+  margin-bottom: 6px;
+}
+
+.dissable {
+  display: none;
+}
+
+.go-back {
+  margin-top: 40px;
+}
+
+.try-now-later {
+  margin-top: 40px;
+}

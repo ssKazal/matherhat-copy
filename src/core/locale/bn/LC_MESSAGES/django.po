@@ -1,0 +1,299 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-11 17:06+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: choices.py:239
+msgid "Have some query"
+msgstr "কিছু জিজ্ঞাসা আছে"
+
+#: choices.py:240
+msgid "Need to start a project"
+msgstr "একটি প্রকল্প শুরু করতে হবে"
+
+#: choices.py:241
+msgid "Want to know quotation"
+msgstr "উদ্ধৃতি জানতে চাই"
+
+#: choices.py:242
+msgid "Others"
+msgstr "অন্যান্য"
+
+#: models/support_for_madrasah.py:31
+msgid ""
+"If one or multiple bank info is provided than all bank information is "
+"required."
+msgstr "ব্যাংকের সব তথ্য প্রয়োজন, যদি আপনি একটি অথবা তার অধিক পূরণ করেন।"
+
+#: templates/home/home.html:12 templates/home/home.html:52
+#: templates/home/home.html:59 templates/home/home.html:726
+msgid "Matherhat Islamia Eamtimkhana O Hafizia Madrasha"
+msgstr "মাঠেরহাট ইসলামিয়া এতিমখানা ও হাফেজিয়া মাদ্রাসাহ"
+
+#: templates/home/home.html:44
+msgid "In the name of Allah the Merciful"
+msgstr "পরম করুণাময় আল্লাহর নামে"
+
+#: templates/home/home.html:65
+msgid "Home"
+msgstr "হোম"
+
+#: templates/home/home.html:66
+msgid "Some Words"
+msgstr "কিছু কথা"
+
+#: templates/home/home.html:67
+msgid "Gallery"
+msgstr "গ্যালারী"
+
+#: templates/home/home.html:68
+msgid "Notice"
+msgstr "বিজ্ঞপ্তি"
+
+#: templates/home/home.html:91 templates/home/home.html:454
+#: templates/home/home.html:763
+msgid "Support Us"
+msgstr "সাহায্য করুন"
+
+#: templates/home/home.html:144 templates/home/home.html:853
+msgid "Contact Us"
+msgstr "যোগাযোগ করুন"
+
+#: templates/home/home.html:295
+#, fuzzy
+#| msgid "Gallery"
+msgid "Madrasha Gallery"
+msgstr "মাদ্রাসার গ্যালারী"
+
+#: templates/home/home.html:308 templates/home/home.html:315
+msgid "Preview"
+msgstr "দেখুন"
+
+#: templates/home/home.html:354
+msgid "See More"
+msgstr "আরও দেখুন"
+
+#: templates/home/home.html:375 templates/home/home.html:417
+msgid "Teachers"
+msgstr "শিক্ষক সংখ্যা"
+
+#: templates/home/home.html:385 templates/home/home.html:427
+msgid "Students"
+msgstr "ছাত্র সংখ্যা"
+
+#: templates/home/home.html:395 templates/home/home.html:437
+msgid "Staffs"
+msgstr "কর্মী সংখ্যা"
+
+#: templates/home/home.html:405 templates/home/home.html:447
+msgid "Active Years"
+msgstr "বর্ষপূর্তি"
+
+#: templates/home/home.html:465
+#, fuzzy
+#| msgid "Notice"
+msgid "Notice Board"
+msgstr "বিজ্ঞপ্তি"
+
+#: templates/home/home.html:525
+msgid "Up Comming / On-going Projects"
+msgstr ""
+
+#: templates/home/home.html:608
+msgid "Support For Madrasha"
+msgstr "মাদ্রাসার জন্য সাহায্য করুন"
+
+#: templates/home/home.html:619 templates/home/home.html:666
+#: templates/home/home.html:693
+msgid "Donate us by"
+msgstr "দান করার মধ্যম"
+
+#: templates/home/home.html:620
+msgid "Islami Bank Bangladesh LTD"
+msgstr "ইসলামি ব্যাংক বাংলাদেশ লিমিটেড"
+
+#: templates/home/home.html:625 templates/home/home.html:641
+#, fuzzy
+#| msgid "Name"
+msgid "Acc Name"
+msgstr "হিসাবের নাম"
+
+#: templates/home/home.html:629 templates/home/home.html:645
+msgid "Acc No."
+msgstr "হিসাব নাম্বার"
+
+#: templates/home/home.html:633 templates/home/home.html:649
+msgid "Branch"
+msgstr "শাখা"
+
+#: templates/home/home.html:666 templates/home/home.html:667
+msgid "bKash"
+msgstr "বিকাশ"
+
+#: templates/home/home.html:667 templates/home/home.html:694
+msgid "Our"
+msgstr "আমাদের"
+
+#: templates/home/home.html:667 templates/home/home.html:694
+#, fuzzy
+#| msgid "Personal Number:"
+msgid "Personal Number"
+msgstr "ব্যাক্তিগত নাম্বার"
+
+#: templates/home/home.html:693 templates/home/home.html:694
+msgid "ROCKET"
+msgstr "রকেট"
+
+#: templates/home/home.html:769
+msgid "Our Facebook Page"
+msgstr "আমাদের ফেইসবুক পেইজ"
+
+#: templates/home/home.html:778
+msgid "Language"
+msgstr "ভাষা"
+
+#: templates/home/home.html:792
+msgid "Change"
+msgstr "পরিবর্তন"
+
+#: templates/home/home.html:856
+msgid "Jazakkallah for contacting us, our team will reach you soon..."
+msgstr "জাযাক্কাল্লাহ, আমাদের দল শীঘ্রই আপনার সাথে যোগাযোগ করবে..."
+
+#: templates/home/home.html:860
+msgid ""
+"Sorry we’re facing some technical difficulties, please try again after "
+"somtimes"
+msgstr ""
+"দুঃখিত আমরা কিছু প্রযুক্তিগত সমস্যার সম্মুখীন হওয়ার কারণে, কিছুক্ষণ পর আবার চেষ্টা করুন।"
+
+#: templates/home/home.html:864
+msgid "Go Back"
+msgstr "ফিরে যান"
+
+#: templates/home/home.html:868
+msgid "Try Again Now"
+msgstr "এখনই চেষ্টা করুন"
+
+#: templates/home/home.html:869
+msgid "Try Again Later"
+msgstr "পরে চেষ্টা করুন"
+
+#: templates/home/home.html:876
+msgid "Name"
+msgstr "নাম"
+
+#: templates/home/home.html:877
+msgid "Type your name"
+msgstr "আপনার নাম লিখেন"
+
+#: templates/home/home.html:881
+msgid "Country"
+msgstr "দেশ"
+
+#: templates/home/home.html:892
+#, fuzzy
+#| msgid "Your E-mail"
+msgid "E-mail"
+msgstr "ইমেইল"
+
+#: templates/home/home.html:893
+#, fuzzy
+#| msgid "Your E-mail"
+msgid "Type your e-mail"
+msgstr "আপনার ইমেইল লিখেন"
+
+#: templates/home/home.html:897
+#, fuzzy
+#| msgid "Your Phone Number"
+msgid "Phone Number"
+msgstr "ফোন নাম্বার"
+
+#: templates/home/home.html:898
+msgid "Phone number with country code"
+msgstr "কান্ট্রি কোড দিয়ে ফোন নাম্বার লিখেন"
+
+#: templates/home/home.html:904
+msgid "Subject"
+msgstr "বিষয়"
+
+#: templates/home/home.html:915
+msgid "Message"
+msgstr "ম্যাসেজ"
+
+#: templates/home/home.html:916
+msgid "Type your message"
+msgstr "আপনার ম্যাসেজ লিখেন"
+
+#: templates/home/home.html:920
+msgid "Submit"
+msgstr "দাখিল"
+
+#: templates/home/home.html:923
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: templates/home/home.html:988
+msgid "Top"
+msgstr "উপরে"
+
+#~ msgid "English"
+#~ msgstr "ইংলিশ"
+
+#~ msgid "Bangla"
+#~ msgstr "বাংলা"
+
+#~ msgid "Sorry something went wrong, try again !"
+#~ msgstr "দুঃখিত কিছু ভুল হয়েছে, আবার চেষ্টা করুন!"
+
+#, fuzzy
+#~| msgid "Bangladesh(+880)"
+#~ msgid "Bangladesh"
+#~ msgstr "বাংলাদেশ"
+
+#~ msgid "Select your Country"
+#~ msgstr "আপনার দেশ নির্বাচন করুন"
+
+#, fuzzy
+#~| msgid "Saudi Arabia(+966)"
+#~ msgid "Soudi Arabia(+966)"
+#~ msgstr "সৌদি আরব(+৯৬৬)"
+
+#~ msgid "Choose your Subject"
+#~ msgstr "আপনার বিষয় নির্বাচন করুন"
+
+#~ msgid "1"
+#~ msgstr "১"
+
+#~ msgid "2"
+#~ msgstr "২"
+
+#~ msgid "3"
+#~ msgstr "৩"
+
+#~ msgid "Select your country"
+#~ msgstr "আপনার দেশ নির্বাচন করুন"
+
+#~ msgid "Select"
+#~ msgstr "নির্বাচন করুন"
+
+#~ msgid "Default"
+#~ msgstr "ডিফল্ট"
+
+#~ msgid "Select a option"
+#~ msgstr "বিষয় নির্বাচন করুন"

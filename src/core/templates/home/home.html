@@ -1,0 +1,1020 @@
+{% load i18n %}
+{% load static %}
+{% load core_extras %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% translate 'Matherhat Islamia Eamtimkhana O Hafizia Madrasha' %} </title>
+    <link rel="shortcut icon" href="{% static 'design_related/assets/img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- css files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/owl.carousel.min.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/owl.theme.default.min.css' %}?v=1.00">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/justifiedGallery.min.css' %}?v=1.00">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/main.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/header-banner.css' %}?v=1.01">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/some-about-madrasha.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/some-words.css' %}?v=1.03">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/gallery.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/total-member.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/notice-board.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/up-comming-project.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/donation-accounts.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/footer.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/support-us.css' %}?v=1.01">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/madrasha-gallery-modal.css' %}?v=1.00">
+    <link rel="stylesheet" href="{% static 'design_related/assets/css/more-gallery-modal.css' %}?v=1.00">
+
+</head>
+
+<body>
+
+    <section id="header-banner">
+        <div class="top-bar">
+            <p> {% translate 'In the name of Allah the Merciful' %} </p>
+        </div>
+
+        <header>
+            {% if menu.logo %}
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{{ menu.logo.url }}"
+                        alt="{% translate 'Matherhat Islamia Eamtimkhana O Hafizia Madrasha' %}">
+                </a>
+            </div>
+            {% else %}
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'design_related/assets/img/main_logo.png' %}"
+                        alt="{% translate 'Matherhat Islamia Eamtimkhana O Hafizia Madrasha' %}">
+                </a>
+            </div>
+            {% endif %}
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="{% url 'home' %}"> {% translate 'Home' %} </a></li>
+                    <li><a href="#some-words"> {% translate 'Some Words' %} </a></li>
+                    <li><a href="#gallery"> {% translate 'Gallery' %} </a></li>
+                    <li><a href="#notice-board"> {% translate 'Notice' %} </a></li>
+                    <!-- <li><a href="#up-comming-project"> Upcoming Project </a></li> -->
+                </ul>
+            </div>
+        </header>
+        {% if wallpaper %}
+        <div class="banner">
+            <img src="{{ wallpaper.background_image.url }}" alt="-">
+            <div class="banner-heading">
+                {% if wallpaper %}
+                <h1>
+                    {% if LANGUAGE_CODE == 'en' %}
+                    {{ wallpaper.text }}
+                    {% else %}
+                    {{ wallpaper.text_bn }}
+                    {% endif %}
+                </h1>
+                {% else %}
+                <h1>
+                    -
+                </h1>
+                {% endif %}
+                <button class="green-btn" data-bs-toggle="modal" data-bs-target="#support-us-modal">
+                    {% translate 'Support Us' %}
+                </button>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+
+    {% if summary_sliders %}
+    <section id="some-about-madrasha">
+        <div class="container">
+
+            <div class="owl-carousel about-madrasha-slider owl-theme">
+                {% for slider in summary_sliders|slice:':3' %}
+                <div class="about-madrasha-container">
+                    {% if slider.slider_image %}
+                    <div class="some-about-madrasha-img">
+                        <img src="{{ slider.slider_image.url }}" alt="-">
+                    </div>
+                    {% else %}
+                    <div class="some-about-madrasha-img">
+                        <img src="{% static 'design_related/assets/img/madrasa_img/main_area.jpg' %}" alt="-">
+                    </div>
+                    {% endif %}
+
+                    <div class="some-about-madrasha-text">
+                        {% if LANGUAGE_CODE == 'en' %}
+                            {% if slider.title %}
+                            <h1> {{ slider.title }}</h1>
+                            {% else %}
+                            <h1> - </h1>
+                            {% endif %}
+
+                            {% if slider.description %}
+                            <p> {{ slider.description }}</p>
+                            {% else %}
+                            <p> - </p>
+                            {% endif %}
+                        {% else %}
+                            {% if slider.title_bn %}
+                            <h1> {{ slider.title_bn }}</h1>
+                            {% else %}
+                            <h1> - </h1>
+                            {% endif %}
+
+                            {% if slider.description_bn %}
+                            <p> {{ slider.description_bn }}</p>
+                            {% else %}
+                            <p> - </p>
+                            {% endif %}
+                        {% endif %}
+
+                        <button class="green-btn" data-bs-toggle="modal" data-bs-target="#support-us-modal">
+                            {% translate 'Contact Us' %}
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="side-img">
+            <img src="{% static 'design_related/assets/img/side img.png' %}" alt="">
+        </div>
+    </section>
+    {% endif %}
+
+
+    {% if teachers or principal %}
+    <section id="some-words">
+        <h1 class="section-title">
+            {% translate 'Respected Authorities' %}
+        </h1>
+
+        <div class="container">
+            {% if principal %}
+            <div class="principal-word-container">
+                <!-- image -->
+                {% if principal.teacher_image %}
+                <div class="principal-img">
+                    <img src="{{ principal.teacher_image.url }}" alt="-">
+                </div>
+                {% else %}
+                <div class="principal-img">
+                   <img src="{% static 'design_related/assets/img/madrasa_img/default.png' %}" alt="">
+                </div>
+                {% endif %}
+
+                {% if LANGUAGE_CODE == 'en' %}
+                    <!-- name -->
+                    {% if principal.name %}
+                    <h1 class="principal-name"> {{ principal.name }} </h1>
+                    {% else %}
+                    <h1 class="principal-name"> - </h1>
+                    {% endif %}
+                    <!-- position -->
+                    {% if principal.position %}
+                    <p class="principal-intro"> {{ principal.position }} </p>
+                    {% else %}
+                    <p class="principal-intro"> - </p>
+                    {% endif %}
+                    <!-- description -->
+                    {% if principal.description %}
+                    <p class="principal-word"> {{ principal.description }} </p>
+                    {% else %}
+                    <p class="principal-word"> - </p>
+                    {% endif %}
+                {% else %}
+                    <!-- name -->
+                    {% if principal.name_bn %}
+                    <h1 class="principal-name"> {{ principal.name_bn }} </h1>
+                    {% else %}
+                    <h1 class="principal-name"> - </h1>
+                    {% endif %}
+                    <!-- position -->
+                    {% if principal.position_bn %}
+                    <p class="principal-intro"> {{ principal.position_bn }} </p>
+                    {% else %}
+                    <p class="principal-intro"> - </p>
+                    {% endif %}
+                    <!-- description -->
+                    {% if principal.description_bn %}
+                    <p class="principal-word"> {{ principal.description_bn }} </p>
+                    {% else %}
+                    <p class="principal-word"> - </p>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if teachers %}
+            <div class="row">
+                {% for teacher in teachers %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="special-person-word-container">
+                        <!-- image -->
+                        {% if teacher.teacher_image %}
+                        <div class="special-person-img">
+                            <img src="{{ teacher.teacher_image.url }}" alt="">
+                        </div>
+                        {% else %}
+                        <div class="special-person-img">
+                            <img src="{% static 'design_related/assets/img/madrasa_img/default.png' %}" alt="">
+                        </div>
+                        {% endif %}
+
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <!-- name -->
+                            {% if teacher.name %}
+                            <h1 class="special-person-name"> {{ teacher.name }} </h1>
+                            {% else %}
+                            <h1 class="special-person-name"> - </h1>
+                            {% endif %}
+                            <!-- position -->
+                            {% if teacher.position %}
+                            <p class="special-person-intro"> {{ teacher.position }} </p>
+                            {% else %}
+                            <p class="special-person-intro"> - </p>
+                            {% endif %}
+                            <!-- description -->
+                            {% if teacher.description %}
+                            <p class="special-person-word"> {{ teacher.description}} </p>
+                            {% else %}
+                            <p class="special-person-word"> - </p>
+                            {% endif %}
+                        {% else %}
+                            <!-- name -->
+                            {% if teacher.name_bn %}
+                            <h1 class="special-person-name"> {{ teacher.name_bn }} </h1>
+                            {% else %}
+                            <h1 class="special-person-name"> - </h1>
+                            {% endif %}
+                            <!-- position -->
+                            {% if teacher.position_bn %}
+                            <p class="special-person-intro"> {{ teacher.position_bn }} </p>
+                            {% else %}
+                            <p class="special-person-intro"> - </p>
+                            {% endif %}
+                            <!-- description -->
+                            {% if teacher.description_bn %}
+                            <p class="special-person-word"> {{ teacher.description_bn }} </p>
+                            {% else %}
+                            <p class="special-person-word"> - </p>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="side-img">
+            <img src="{% static 'design_related/assets/img/side img.png' %}" alt="-">
+        </div>
+    </section>
+    {% endif %}
+
+
+    {% if galleries %}
+    <section id="gallery">
+        <div class="container">
+            <h1 class="section-title">
+                {% translate 'Madrasha Gallery' %}
+            </h1>
+
+
+            <div class="row">
+                {% for gallery in galleries|slice:':6' %}
+                <div class="col-lg-4 col-sm-6 ">
+                    <div class="madrasha-gallery-box">
+                        <!-- image -->
+                        {% if gallery.image %}
+                        <div class="madrasha-gallery-box-img">
+                            <img src="{{ gallery.image.url }}" alt="">
+                            <div class="madrasha-gallery-preview">
+                                <span> {% translate 'Preview' %} </span>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="madrasha-gallery-box-img">
+                            <img src="{% static 'design_related/assets/img/madrasa_img/placeholder_image.jpg' %}" alt="">
+                            <div class="madrasha-gallery-preview">
+                                <span> {% translate 'Preview' %} </span>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                         <!-- text -->
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <div class="madrasha-gallery-box-heading">
+                                {% if gallery.text %}
+                                <h2>
+                                    {{ gallery.text }}
+                                </h2>
+                                {% else %}
+                                <h2>
+                                    -
+                                </h2>
+                                {% endif%}
+                            </div>
+                        {% else %}
+                            <div class="madrasha-gallery-box-heading">
+                                {% if gallery.text_bn %}
+                                <h2>
+                                    {{ gallery.text_bn }}
+                                </h2>
+                                {% else %}
+                                <h2>
+                                    -
+                                </h2>
+                                {% endif%}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            {% if galleries|length > 6%}
+            <button class="green-btn gallery-see-more"> {% translate 'See More' %} </button>
+            {% endif %}
+
+        </div>
+    </section>
+    {% endif %}
+
+
+    {% if madrasah_figure %}
+    <section id="total-member">
+        <div class="container">
+            <div class="row mb-5">
+            {% if LANGUAGE_CODE == 'en' %}
+            <!-- English -->
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.teacher %}
+                        <span> {{ madrasah_figure.teacher }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Teachers' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.student %}
+                        <span> {{ madrasah_figure.student }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Students' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.staff %}
+                        <span> {{ madrasah_figure.staff }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Staffs' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.active_year %}
+                        <span> {{ madrasah_figure.active_year }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Active Years' %} </p>
+                    </div>
+                </div>
+            {% else %}
+            <!-- Bangla -->
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.teacher_bn %}
+                        <span> {{ madrasah_figure.teacher_bn }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Teachers' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.student_bn %}
+                        <span> {{ madrasah_figure.student_bn }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Students' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.staff_bn %}
+                        <span> {{ madrasah_figure.staff_bn }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Staffs' %} </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                    <div class="number-of-member-box">
+                        {% if madrasah_figure.active_year_bn %}
+                        <span> {{ madrasah_figure.active_year_bn }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                        <p> {% translate 'Active Years' %} </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            </div>
+            <button class="green-btn" data-bs-toggle="modal" data-bs-target="#support-us-modal"> 
+                {% translate 'Support Us' %} 
+            </button>
+        </div>
+    </section>
+    {% endif %}
+
+
+    {% if notices %}
+    <section id="notice-board">
+        <div class="container">
+            <h1 class="section-title">
+                {% translate 'Notice Board' %}
+            </h1>
+
+            <div class="notice-board-container">
+                {% for notice in notices|slice:':3' %}
+                <div class="notice-box">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect width="19.9998" height="19.4444" fill="#3CAC2A" fill-opacity="0.7" />
+                    </svg>
+
+                    {% if LANGUAGE_CODE == 'en' %}
+                    <!-- English -->
+                        <div>
+                            <!-- notice text -->
+                            {% if notice.text %}
+                            <h1 class="notice-title">
+                                {{ notice.text }}
+                            </h1>
+                            {% else %}
+                            <h1 class="notice-title"> - </h1>
+                            {% endif %}
+                            <!-- publication date -->
+                            <span class="notice-date"> {{ notice.pub_date|date:'d F, Y' }} </span>
+                        </div>
+                    {% else %}
+                    <!-- Bangla -->
+                        <div>
+                            <!-- notice text -->
+                            {% if notice.text_bn %}
+                            <h1 class="notice-title">
+                                {{ notice.text_bn }}
+                            </h1>
+                            {% else %}
+                            <h1 class="notice-title"> - </h1>
+                            {% endif %}
+                            <!-- publication date -->
+                            <span class="notice-date"> 
+                                {{ notice.pub_date|date:'d'|translate_bangla_numeral }}
+                                {{ notice.pub_date|date:'F' }},
+                                {{ notice.pub_date|date:'Y'|translate_bangla_numeral }} 
+                            </span>
+                        </div>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="side-img">
+            <img src="{% static 'design_related/assets/img/side img.png' %}" alt="-">
+        </div>
+    </section>
+    {% endif %}
+
+
+    <section id="up-comming-project">
+        <div class="container">
+            <h1 class="section-title">
+                {% translate 'Up Comming / On-going Projects' %}
+            </h1>
+
+
+
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="up-comming-on-going-project-box">
+                        <div class="up-comming-on-going-project-img">
+                            <img src="{% static 'design_related/assets/img/madrasa_img/gallery-2.jpg' %}" alt="">
+
+                            <div class="clip-box">
+                                <i class="bi bi-paperclip"></i>
+                            </div>
+                        </div>
+
+                        <div class="up-comming-on-going-project-padding">
+                            <h1 class="up-comming-on-going-project-title">
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when ...
+                            </h1>
+
+                            <div class="up-comming-on-going-project-progressing-box">
+                                <div class="progress-percentage">
+                                    <span>80%</span>
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+                                        <g filter="url(#filter0_d)">
+                                            <path d="M3.63689 0.75L8 8.93689L12.3631 0.75H3.63689Z" stroke="#3CAC2A" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d" x="0.803955" y="0.25" width="14.3923" height="13.75"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                <feOffset dy="2" />
+                                                <feGaussianBlur stdDeviation="1" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.27 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow"
+                                                    result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
+                                </div>
+                                <div class="up-comming-on-going-project-progressing-bar">
+                                    <div style="width: 80%;" class="up-comming-on-going-project-progress"></div>
+                                </div>
+                            </div>
+
+                            <div class="up-comming-on-going-project-info">
+                                <p>
+                                    <b>Budget:</b>
+                                    <span>14,53,000 ৳</span>
+                                </p>
+
+                                <button class="green-btn" data-bs-toggle="modal" data-bs-target="#support-us-modal">
+                                    Support Us This Project
+                                </button>
+
+                                <p>
+                                    <b>Last Date:</b>
+                                    <span>23:06:2021</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    {% if donation %}
+    <section id="donation-accounts">
+        <div class="container">
+            <h1 class="section-title">
+                {% translate 'Support For Madrasha' %}
+            </h1>
+           
+            <div class="support-us-wrapper">
+                {% if donation.bank_acc_name %}
+                <div class="support-list-box">
+                    <div class="bank-logo">
+                        <img class="islami-bangk-logo" src="{% static 'design_related/assets/img/islami bank.png' %}"
+                            alt="islami bank">
+                    </div>
+                    <div>
+                        <p class="donate-by"> {% translate 'Donate us by' %} </p>
+                        <p class="bank-name islami-bank-name"> {% translate 'Islami Bank Bangladesh LTD' %} </p>
+                        {% if LANGUAGE_CODE == 'en' %}
+                        <!-- English -->
+                        <div class="islami-bank-data-table">
+                            <div>
+                                <p>{% translate 'Acc Name' %} :</p>
+                                <p> {{ donation.bank_acc_name }} </p>
+                            </div>
+                            <div>
+                                <p>{% translate 'Acc No.' %} :</p>
+                                <p> {{ donation.bank_acc_no }} </p>
+                            </div>
+                            <div>
+                                <p>{% translate 'Branch' %} :</p>
+                                <p> {{ donation.bank_branch }} </p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <!-- bangla -->
+                        <div class="islami-bank-data-table">
+                            <div>
+                                <p>{% translate 'Acc Name' %} :</p>
+                                <p> {{ donation.bank_acc_name_bn }} </p>
+                            </div>
+                            <div>
+                                <p>{% translate 'Acc No.' %} :</p>
+                                <p> {{ donation.bank_acc_no_bn }} </p>
+                            </div>
+                            <div>
+                                <p>{% translate 'Branch' %} :</p>
+                                <p> {{ donation.bank_branch_bn }} </p>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if donation.bkash_number and donation.bkash_number_bn %}
+                <div class="support-list-box">
+                    <div class="bank-logo">
+                        <img class="islami-bangk-logo"
+                            src="{% static 'design_related/assets/img/BKash-bKash-Logo.wine 1.png' %}" alt="bKash">
+                    </div>
+                    <div>
+                        <p class="donate-by"> {% translate 'Donate us by' %} <span class="bkash-name"> {% translate 'bKash' %} </span> </p>
+                        <p class="moile-bank-info bkash-bank-info"> {% translate 'Our' %} <b> {% translate 'bKash' %} </b> {% translate 'Personal Number' %} :
+                            <!-- English -->
+                            {% if LANGUAGE_CODE == 'en' %}
+                                <span>
+                                    {{ donation.bkash_number }}
+                                </span>
+                            <!-- Bangla -->
+                            {% else %}
+                                <span>
+                                    {{ donation.bkash_number_bn }}
+                                </span>
+                            {% endif %}
+                            
+                        </p>
+
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if donation.rocket_number and donation.rocket_number_bn %}
+                <div class="support-list-box">
+                    <div class="bank-logo">
+                        <img class="islami-bangk-logo"
+                            src="{% static 'design_related/assets/img/dutch-bangla-rocket.png' %}" alt="ROCKET">
+                    </div>
+                    <div>
+                        <p class="donate-by"> {% translate 'Donate us by' %} <span class="rocket-name"> {% translate 'ROCKET' %} </span> </p>
+                        <p class="moile-bank-info rocket-bank-info"> {% translate 'Our' %} <b>{% translate 'ROCKET' %} </b> {% translate 'Personal Number' %} :
+                            <!-- English -->
+                            {% if LANGUAGE_CODE == 'en' %}   
+                                <span>
+                                    {{ donation.rocket_number }}
+                                </span>
+                            <!-- Bangla -->
+                            {% else %}                
+                                <span>
+                                    {{ donation.rocket_number_bn }}
+                                </span>    
+                            {% endif %}
+
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </section>
+    {% endif %}
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-flex-box">
+                <div class="footer-boxes">
+                    {% if footer.logo %}
+                    <div class="footer-logo">
+                        <a href="{% url 'home' %}">
+                            <img src="{{ footer.logo.url }}" alt="{% translate 'Matherhat Islamia Eamtimkhana O Hafizia Madrasha' %}">
+                        </a>
+                    </div>
+                    {% endif %}
+                    <p>
+                        <i class="bi bi-envelope-fill"></i>
+                        {% if footer.email %}
+                        <span> {{ footer.email }} </span>
+                        {% else %}
+                        <span> - </span>
+                        {% endif %}
+                    </p>
+                    <p>
+                        <img class="telephone__icon" src="{% static 'design_related/assets/img/telephone.svg' %}"
+                            alt="">
+                        <!-- English -->
+                        {% if LANGUAGE_CODE == 'en' %}
+                            {% if footer.phone_no %}
+                            <span> {{ footer.phone_no }} </span>
+                            {% else %}
+                            <span> - </span>
+                            {% endif %}
+                        <!-- Bangla -->
+                        {% else %}
+                            {% if footer.phone_no_bn %}
+                            <span> {{ footer.phone_no_bn }} </span>
+                            {% else %}
+                            <span> - </span>
+                            {% endif %}
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="footer-boxes">
+                    <ul class="footer-navigation">
+                        <li data-bs-toggle="modal" data-bs-target="#support-us-modal">
+                            <i class="bi bi-chevron-right"></i>
+                            {% translate 'Support Us' %}
+                        </li>
+                        {% if footer.fb_page_url %}
+                        <li>
+                            <a href="{{ footer.fb_page_url }}">
+                                <i class="bi bi-chevron-right"></i>
+                                {% translate 'Our Facebook Page' %}
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+
+
+                    <div class="language">
+                        <h1>
+                            {% translate 'Language' %}
+                        </h1>
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <select class="btn btn-light btn-sm"  name="language">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <input class="btn btn-light btn-sm" type="submit" value="{% translate 'Change' %}">
+                        </form>
+                        <!-- <a class="active_ln" href="#"> English </a>
+                        <a href="#"> বাংলা </a>
+                        <a class="hide_ln" href="#"> عربى </a> -->
+                    </div>
+                </div>
+
+                {% if footer.address_text and footer.address_text_bn or footer.address_image %}
+                <div class="fcooter-boxes">
+                    {% if footer.address_image %}
+                    <a target="_blank" href="{{ footer.address_link }}">
+                        <div class="map-img">
+                            <img src="{{ footer.address_image.url }}" alt="">
+                        </div>
+                    {% endif %}
+                        <!-- English -->
+                        {% if LANGUAGE_CODE == 'en' %}
+                            {% if footer.address_text %}
+                            <p class="madrahsa-location">
+                                <i class="bi bi-geo-alt"></i>
+                                {{ footer.address_text }}
+                            </p>
+                            {% else %}
+                            <p class="madrahsa-location">
+                                -
+                            </p>
+                            {% endif %}
+                        <!-- Bangla -->
+                        {% else %}
+                            {% if footer.address_text_bn %}
+                            <p class="madrahsa-location">
+                                <i class="bi bi-geo-alt"></i>
+                                {{ footer.address_text_bn }}
+                            </p>
+                            {% else %}
+                            <p class="madrahsa-location">
+                                -
+                            </p>
+                            {% endif %}
+
+                        {% endif %}
+                    </a>
+                </div>
+                {% endif %}
+
+            </div>
+
+
+            <p class="developed-by">
+                Developed By <a target="_blank" href="http://vaid.tech/">Vaidtech</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- support us modal -->
+    <div class="modal fade" id="support-us-modal" tabindex="-1" aria-labelledby="support-us-modal" aria-hidden="true">
+        <div class="modal-dialog support-us-modal-dialog">
+            <div class="modal-content">
+                <h1 class="section-title">
+                    {% translate 'Contact Us' %}
+                </h1>
+                <div class="row success-message dissable" id="success-message">
+                    <h3>{% translate 'Jazakkallah for contacting us, our team will reach you soon...' %}</h3>
+                </div>
+
+                <div class="row error-message dissable" id="error-message">
+                    <h3>{% translate 'Sorry we’re facing some technical difficulties, please try again after somtimes' %}</h3>
+                </div>
+
+                <div class="go-back dissable" id="go-back">
+                    <button class="support-us-btn back"> {% translate 'Go Back' %} </button>
+                </div>
+                
+                <div class="try-now-later dissable" id="try">
+                    <button class="support-us-btn now"> {% translate 'Try Again Now' %} </button>
+                    <button class="support-us-btn later"> {% translate 'Try Again Later' %} </button>
+                </div>
+
+                <form action="POST" id="contact-form" name="contact-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="support-us-input-field">
+                                <label for="name"> {% translate 'Name' %} </label>
+                                <input type="text" name="name" placeholder="{% translate 'Type your name' %}">
+                            </div>
+
+                             <div class="support-us-input-field">
+                                <label for="country"> {% translate 'Country' %} </label>
+                                <select name="country" id="country">
+                                {% for key, value in country %}
+                                    <option value="{{ key }}"> {{ value }} </option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="support-us-input-field">
+                                <label for="email">{% translate 'E-mail' %}</label>
+                                <input class="email-or-phone" id="email" type="text" name="email" placeholder="{% translate 'Type your e-mail' %}">
+                            </div>
+
+                            <div class="support-us-input-field">
+                                <label for="phone"> {% translate 'Phone Number' %} </label>
+                                <input class="email-or-phone" id="phone" type="text" name="phone" placeholder="{% translate 'Phone number with country code' %}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="support-us-input-field">
+                                <label for="subject"> {% translate 'Subject' %} </label>
+                                <select name="subject" id="subject">
+                                {% for key, value in subject %}
+                                    <option value="{{ key }}"> {{ value }} </option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-us-textarea-field">
+                        <label for="message"> {% translate 'Message' %} </label>
+                        <textarea name="message" placeholder="{% translate 'Type your message' %}"></textarea>
+                    </div>
+
+                    <button class="support-us-btn" type="submit"> 
+                        {% translate 'Submit' %} 
+                        <span id="spinner" class="spinner-border spinner-border-sm dissable" role="status" aria-hidden="true"></span> 
+                    </button>
+                    <button class="support-us-btn" data-bs-dismiss="modal"> {% translate 'Cancel' %} </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- gallery modal -->
+    <div class="gallery-modal-open">
+        <div class="gallery-modal-content">
+            <div class="gallery-close-icon">
+                <i class="bi bi-x"></i>
+            </div>
+            <div class="gallery-img">
+                <img src="" alt="">
+            </div>
+            <p> </p>
+        </div>
+    </div>
+
+
+    <!-- more gallery img in modal -->
+    <div class="more-gallery-modal">
+        <div class="more-gallery-modal-content">
+            <i class="bi bi-x more-gallery-modal-close"></i>
+
+            <div id="modal_image_gellary">
+                {% for gallery in galleries|slice:'6:' %}
+                <div class="modal-gallery_img_box">
+                    <!-- image -->
+                    {% if gallery.image %}
+                        <img alt="" src="{{ gallery.image.url }}" />
+                    {% else %}
+                        <img src="{% static 'design_related/assets/img/madrasa_img/placeholder_image.jpg' %}" alt="">
+                    {% endif %}
+                    <!-- text -->
+                    <!-- English -->
+                    {% if LANGUAGE_CODE == 'en' %}
+                        {% if gallery.text_en %}
+                        <p> {{ gallery.text_en }} </p>
+                        {% else %}
+                        <p> - </p>
+                        {% endif %}
+                    <!-- Bangla -->
+                    {% else %}
+                        {% if gallery.text_bn %}
+                        <p> {{ gallery.text_bn }} </p>
+                        {% else %}
+                        <p> - </p>
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <button class="go-top">
+        <div>
+            <i class="bi bi-arrow-up"></i>
+            {% translate 'Top' %}
+        </div>
+    </button>
+
+
+
+    <!-- ====================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="{% url 'javascript-catalog' %}"></script>
+    <script src="{% static 'design_related/assets/js/owl.carousel.min.js' %}?v=1.00"></script>
+    <script src="{% static 'design_related/assets/js/jquery.justifiedGallery.min.js' %}?v=1.00"></script>
+    <!-- <script src="assets/js/jquery-tjgallery.js"></script> -->
+    <script src="{% static 'design_related/assets/js/api.urls.js' %}?v=1.00"></script>
+    <script src="{% static 'design_related/assets/js/main.js' %}?v=1.02"></script>
+    <script src="{% static 'design_related/assets/js/dom-loop.js' %}?v=1.02"></script>
+
+</body>
+
+</html>

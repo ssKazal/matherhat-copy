@@ -1,0 +1,149 @@
+#some-about-madrasha {
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.about-madrasha-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.some-about-madrasha-img {
+    width: 48%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.some-about-madrasha-img img {
+    width: 100%;
+}
+
+.some-about-madrasha-text {
+    width: 48%;
+}
+
+.some-about-madrasha-text h1 {
+    color: #3CAC2A;
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.some-about-madrasha-text p {
+    font-size: 20px;
+    color: var(--dry-text);
+    margin-bottom: 30px;
+}
+
+.some-about-madrasha-text button {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.some-about-madrasha-text button .bi-arrow-right {
+    line-height: 0;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.side-img {
+    position: absolute;
+    right: 50px;
+    top: 0;
+}
+
+
+
+
+@media screen and (max-width:1400px) {
+    .side-img img {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width:1285px) {
+    .some-about-madrasha-img {
+        max-height: 315px;
+    }
+
+    .some-about-madrasha-text h1 {
+        font-size: 32px;
+    }
+
+    .some-about-madrasha-text p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .some-about-madrasha-text h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .some-about-madrasha-text h1 {
+        font-size: 24px;
+    }
+
+    .some-about-madrasha-text p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .some-about-madrasha-text button {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .some-about-madrasha-text h1 {
+        margin-bottom: 10px;
+    }
+
+    #some-about-madrasha .container {
+        max-width: 94%;
+    }
+
+    .some-about-madrasha-img {
+        max-height: 260px;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    #some-about-madrasha{
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .about-madrasha-container {
+        flex-wrap: wrap;
+        margin: 0 10px;
+    }
+
+    .some-about-madrasha-img,
+    .some-about-madrasha-text {
+        width: 100%;
+    }
+
+    .some-about-madrasha-img{
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:540px){
+    .some-about-madrasha-img {
+        max-height: 200px;
+    }
+}
+
+
+@media screen and (max-width:440px){
+    .some-about-madrasha-text h1 {
+        font-size: 20px;
+    }
+}

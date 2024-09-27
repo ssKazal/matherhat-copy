@@ -1,0 +1,174 @@
+#donation-accounts {
+    padding: 80px 0;
+}
+
+.support-us-wrapper {
+    width: 68%;
+    margin: 0 auto;
+}
+
+.support-list-box {
+    display: flex;
+    padding: 40px 100px;
+    background: #EFFFEF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.donate-by,
+.bank-name {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--dark-text);
+}
+
+.bank-name {
+    margin-bottom: 30px;
+}
+
+.bank-logo {
+    margin-right: 50px;
+}
+
+.islami-bangk-logo {
+    width: 90px;
+}
+
+.islami-bank-name {
+    color: #008C44 !important;
+}
+
+.islami-bank-data-table p {
+    font-size: 22px;
+}
+
+.islami-bank-data-table div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.islami-bank-data-table div p:first-child {
+    color: var(--dark-text);
+    min-width: 80px;
+    margin-right: 10px;
+}
+
+.islami-bank-data-table div p:last-child {
+    color: #008C44 !important;
+}
+
+.moile-bank-info {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.bkash-bank-info,
+.bkash-name {
+    color: #D12053 !important;
+}
+
+.rocket-bank-info,
+.rocket-name {
+    color: #8C3596 !important;
+}
+
+
+@media screen and (max-width: 1280px){
+    .donate-by, .bank-name { 
+        font-size: 20px; 
+    }
+
+    .islami-bank-data-table p {
+        font-size: 18px;
+    }
+
+    .moile-bank-info{
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width:992px){
+    .support-us-wrapper{
+        width: 80%;
+    }
+
+    .islami-bank-data-table p {
+        font-size: 14px;
+    }
+
+    .islami-bank-data-table div p:first-child{
+        min-width: 45px;
+    }
+
+    .donate-by, .bank-name{
+        white-space: nowrap;
+        font-size: 16px;
+    }
+
+    .moile-bank-info{
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .bank-logo img{
+        width: 70px;
+    }
+
+    .bank-logo {
+        margin-right: 15px;
+    }
+
+    .support-list-box{
+        padding: 40px;
+    }
+
+    .bank-name{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #donation-accounts {
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .support-us-wrapper{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .support-list-box{
+        padding: 20px;
+    }
+
+    .moile-bank-info{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .moile-bank-info span{
+        font-weight: bold;
+    }
+
+    .bank-logo img {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width:356px) {
+    .bank-logo img {
+        width: 90px;
+        margin-bottom: 10px;
+    }
+
+    .support-list-box {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+}
